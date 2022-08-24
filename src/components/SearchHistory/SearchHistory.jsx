@@ -14,7 +14,7 @@ const Ul = styled.ul`
 const Li = styled.li`
     margin: 0 2rem;
     list-style-type: square;
-    &:nth-child(1) {
+    &:nth-of-type(1) {
         color: ${LiFirstColour};
     }
 `
