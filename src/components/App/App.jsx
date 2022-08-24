@@ -7,10 +7,15 @@ import { useState } from "react";
 
 function App() {
   const [terms, setTerms] = useState(["hello there", "i have te highground"]);
+
+  const addTerm = (term) => {
+    setTerms([term, ...terms]);
+  };
   return (
+    // pass props and funcs to components
     <>
       <Nav />
-      <SearchBar userInput={terms[0]} />
+      <SearchBar userInput={terms[0]} addTerm={addTerm} />
       <SearcHistory terms={terms} />
       <Main />
     </>

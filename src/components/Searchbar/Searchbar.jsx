@@ -9,6 +9,9 @@ export default function SearchBar(props) {
     e.preventDefault();
     // target name of form
     // setInput(e.target["custom-search"].value);
+    // props comming from App.jsx
+
+    props.addTerm(e.target["custom-search"].value);
   };
 
   return (
