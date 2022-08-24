@@ -1,4 +1,3 @@
-import SearcHistory from "../SearchHistory/SearchHistory";
 import "./MainCont.css";
 
 function Main() {
@@ -6,7 +5,6 @@ function Main() {
     <>
       <main>
         <h1>Hello there</h1>
-        <SearcHistory />
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam,
           dolorum. Vero, sequi nemo. Eaque debitis commodi, fugit ex doloremque

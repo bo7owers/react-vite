@@ -3,12 +3,12 @@ import { useState } from "react";
 
 export default function SearchBar(props) {
   // First var then func
-  const [userInput, setInput] = useState("");
+  // const [userInput, setInput] = useState("");
 
   const submitted = (e) => {
     e.preventDefault();
     // target name of form
-    setInput(e.target["custom-search"].value);
+    // setInput(e.target["custom-search"].value);
   };
 
   return (
@@ -20,7 +20,7 @@ export default function SearchBar(props) {
           Search
         </button>
       </form>
-      {userInput ? <p>You searched for {userInput}</p> : ""}
+      {props.userInput ? <p>You searched for {props.userInput}</p> : ""}
     </section>
   );
 }
