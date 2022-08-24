@@ -13,12 +13,12 @@ function App() {
   };
   return (
     // pass props and funcs to components
-    <>
+    <div className="app">
       <Nav />
       <SearchBar userInput={terms[0]} addTerm={addTerm} />
       <SearcHistory terms={terms} />
       <Main />
-    </>
+    </div>
   );
 }
 

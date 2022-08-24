@@ -1,0 +1,8 @@
+.search-list {
+  margin: 0 2rem;
+  list-style-type: square;
+}
+
+.search-list li:nth-child(1) {
+  color: #5c0202;
+}
