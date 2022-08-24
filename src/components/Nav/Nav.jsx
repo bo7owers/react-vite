@@ -1,5 +1,4 @@
 import "./Nav.css";
-import SearchBar from "../Searchbar/Searchbar";
 
 function Nav() {
   return (
@@ -24,7 +23,6 @@ function Nav() {
               </a>
             </li>
           </ul>
-          <SearchBar />
         </nav>
       </div>
     </>
