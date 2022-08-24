@@ -4,6 +4,8 @@ import { css } from '@emotion/react'
 const bgColor = ' #369'
 function Nav() {
     return (
+        // This is not accessible, make two Nav components
+        // One for sm screens (bottom), one for md >= screens
         <>
             <div
                 css={css`
@@ -14,6 +16,13 @@ function Nav() {
                     background-color: ${bgColor};
                     height: 6em;
                     padding: 1.5em;
+                    position: absolute;
+                    bottom: 0;
+                    width: 100vw;
+                    @media screen and (min-width: 480px) {
+                        position: relative;
+                        top: 0;
+                    }
                 `}
             >
                 <img
