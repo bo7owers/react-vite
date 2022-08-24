@@ -2,21 +2,33 @@ import './App.css'
 import Nav from '../Nav/Nav'
 import SearchBar from '../Searchbar/Searchbar'
 import SearcHistory from '../SearchHistory/SearchHistory'
-import { useState } from 'react'
+import SearchResults from '../SearchResults/SearchResults'
+import { useState, useEffect } from 'react'
 import { css } from '@emotion/react'
 
 function App() {
-    const [terms, setTerms] = useState(['hello there', 'i have te highground'])
+    const [terms, setTerms] = useState(['hello there', 'i have the highground'])
 
     const addTerm = (term) => {
         setTerms([term, ...terms])
     }
+
+    const [movies, setMovies] = useState([])
+
+    useEffect(
+        () => {
+            // do things
+            console.log('page rendered')
+        },
+        [
+            // watch things
+        ]
+    )
     return (
         // pass props and funcs to components
         <div className='app'>
             <Nav />
             <SearchBar userInput={terms[0]} addTerm={addTerm} />
-            <SearcHistory terms={terms} />
             <main
                 css={css`
                     display: flex;
@@ -31,20 +43,8 @@ function App() {
                 >
                     Hello there
                 </h1>
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Nam, dolorum. Vero, sequi nemo. Eaque debitis commodi, fugit
-                    ex doloremque molestiae. Doloribus illum, optio
-                    reprehenderit hic unde reiciendis similique soluta! Iure!
-                    Hic assumenda architecto iste, qui, rerum minus sapiente
-                    inventore, veritatis explicabo quaerat modi ipsa rem soluta
-                    repellat voluptatem deleniti ex dolorem libero tempora quas
-                    optio iusto. Quisquam tempora sed officia. Maxime est id,
-                    reprehenderit eligendi assumenda sapiente harum, tenetur
-                    consectetur architecto quaerat, recusandae facilis in? Ipsa
-                    ad aut, at accusantium voluptatibus, voluptatum ducimus
-                    tenetur nemo, nisi dignissimos animi soluta quam.
-                </p>
+                <SearcHistory terms={terms} />
+                <SearchResults movies={movies} />
             </main>
         </div>
     )
