@@ -1,26 +1,5 @@
-.main-nav {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: #369;
-  height: 6em;
-  padding: 1.5em;
-}
-
-.main-nav .logo {
-  margin-right: auto;
-}
-
-ul.nav-list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1rem;
-  list-style-type: none;
-}
+/* The rest of the styles are in Nav.jsx  */
 
 a.nav-link {
-  color: #ffffff;
+    color: #ffffff;
 }

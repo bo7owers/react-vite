@@ -1,24 +1,39 @@
 import './Nav.css'
 import { css } from '@emotion/react'
-const color = ' #369'
+
+const bgColor = ' #369'
 function Nav() {
     return (
         <>
             <div
-                className='main-nav'
                 css={css`
-                    padding: 32px;
-                    background-color: hotpink;
-                    font-size: 24px;
-                    border-radius: 4px;
-                    &:hover {
-                        color: ${color};
-                    }
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: flex-end;
+                    align-items: center;
+                    background-color: ${bgColor};
+                    height: 6em;
+                    padding: 1.5em;
                 `}
             >
-                <img src='./vite.svg' alt='' className='logo' />
+                <img
+                    src='./vite.svg'
+                    alt=''
+                    css={css`
+                        margin-right: auto;
+                    `}
+                />
                 <nav>
-                    <ul className='nav-list'>
+                    <ul
+                        css={css`
+                            display: flex;
+                            flex-flow: row wrap;
+                            justify-content: flex-end;
+                            align-items: center;
+                            gap: 1rem;
+                            list-style-type: none;
+                        `}
+                    >
                         <li className='nav-item'>
                             <a className='nav-link' href='#'>
                                 Nav 1
