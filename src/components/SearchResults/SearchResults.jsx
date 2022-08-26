@@ -1,4 +1,6 @@
 import styled from '@emotion/styled'
+import List from '../List/List'
+
 const UlBgColour = '#ffefbf'
 const LiFirstColour = '#5c0202'
 
@@ -22,15 +24,19 @@ const Li = styled.li`
     // }
 `
 const SearchResults = (props) => {
+    let {results} = {...props} 
+    // continue here min 20:00
     return (
-        <>
-            <Ul>
-                {props.results.map((item) => (
-                    <Li key={item.episode_id}>{item.title}</Li>
-                ))}
-            </Ul>
-        </>
+        <div className='results'>
+            <List data={} />
+        </div>
     )
 }
+
+//  <Ul>
+// {props.results.map((item) => (
+//     <Li key={item.episode_id}>{item.title}</Li>
+// ))}
+// </Ul>
 
 export default SearchResults
