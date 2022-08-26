@@ -25,11 +25,11 @@ const SearchResults = (props) => {
     return (
         <>
             <Ul>
-                {props.films.map((movie) => (
-                    <Li key={movie.episode_id}>
-                        <strong>{movie.director}</strong> directed the movie:{' '}
-                        {movie.title}
-                        <em>{movie.title}</em>
+                {props.results.map((item) => (
+                    <Li key={item.episode_id}>
+                        <strong>{item.director}</strong> directed the item:{' '}
+                        {item.title}
+                        <em>{item.title}</em>
                     </Li>
                 ))}
             </Ul>

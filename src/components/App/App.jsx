@@ -7,18 +7,18 @@ import { useState, useEffect } from 'react'
 import { css } from '@emotion/react'
 
 function App() {
-    const [terms, setTerms] = useState(['hello there', 'i have the highground'])
+    const [terms, setTerms] = useState([])
+    const [results, setResults] = useState([])
+    const [dataType, setDataType] = useState('films')
 
     const addTerm = (term) => {
         setTerms([term, ...terms])
     }
 
-    const [films, setfilms] = useState([])
-
     useEffect(
         () => {
             // do things
-            fetchData('films')
+            fetchData()
         },
         [
             // watch things
@@ -26,12 +26,12 @@ function App() {
     )
 
     const fetchData = async (type) => {
-        let url = `https://swapi.dev/api/${type}`
+        let url = `https://swapi.dev/api/${dataType}`
         let resp = await fetch(url)
         if (!resp.ok) throw new Error(resp.statusText)
         let data = await resp.json()
 
-        setfilms(data.results)
+        setResults(data.results)
     }
     return (
         // pass props and funcs to components
@@ -53,7 +53,7 @@ function App() {
                     Hello there
                 </h1>
                 <SearcHistory terms={terms} />
-                <SearchResults films={films} />
+                <SearchResults results={results} />
             </main>
         </div>
     )

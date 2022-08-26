@@ -47,10 +47,13 @@ export default function SearchBar(props) {
                 </button>
             </form>
             <div aria-live='polite'>
-                {props.userInput ? (
+                {/* {props.userInput ? (
                     <Paragraph>You searched for {props.userInput}</Paragraph>
                 ) : (
                     ''
+                )} */}
+                {props.userInput && (
+                    <Paragraph>You searched for {props.userInput}</Paragraph>
                 )}
             </div>
         </section>
