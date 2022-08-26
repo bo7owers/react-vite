@@ -23,11 +23,17 @@ const Li = styled.li`
 `
 const SearchResults = (props) => {
     return (
-        <Ul>
-            {props.movies.map((movie) => (
-                <Li key={movie.episode_id}>${movie.title}</Li>
-            ))}
-        </Ul>
+        <>
+            <Ul>
+                {props.films.map((movie) => (
+                    <Li key={movie.episode_id}>
+                        <strong>{movie.director}</strong> directed the movie:{' '}
+                        {movie.title}
+                        <em>{movie.title}</em>
+                    </Li>
+                ))}
+            </Ul>
+        </>
     )
 }
 

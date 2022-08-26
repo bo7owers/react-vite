@@ -13,17 +13,26 @@ function App() {
         setTerms([term, ...terms])
     }
 
-    const [movies, setMovies] = useState([])
+    const [films, setfilms] = useState([])
 
     useEffect(
         () => {
             // do things
-            console.log('page rendered')
+            fetchData('films')
         },
         [
             // watch things
         ]
     )
+
+    const fetchData = async (type) => {
+        let url = `https://swapi.dev/api/${type}`
+        let resp = await fetch(url)
+        if (!resp.ok) throw new Error(resp.statusText)
+        let data = await resp.json()
+
+        setfilms(data.results)
+    }
     return (
         // pass props and funcs to components
         <div className='app'>
@@ -44,7 +53,7 @@ function App() {
                     Hello there
                 </h1>
                 <SearcHistory terms={terms} />
-                <SearchResults movies={movies} />
+                <SearchResults films={films} />
             </main>
         </div>
     )
