@@ -12,8 +12,18 @@ function App() {
     const [dataType, setDataType] = useState('films')
 
     const addTerm = (term) => {
-        setTerms([term, ...terms])
+        // Create array from sarting with user input
+        let newTermsArr = new Set([term, ...terms])
+        setTerms(Array.from(newTermsArr))
+        // fetchData(term)
     }
+
+    useEffect(() => {
+        fetchData(terms[0])
+        return () => {
+            // clean up func
+        }
+    }, [terms])
 
     useEffect(
         () => {
@@ -25,8 +35,11 @@ function App() {
         ]
     )
 
-    const fetchData = async (type) => {
+    const fetchData = async (keyword) => {
         let url = `https://swapi.dev/api/${dataType}`
+        if (keyword) {
+            url += `/?search=${keyword}`
+        }
         let resp = await fetch(url)
         if (!resp.ok) throw new Error(resp.statusText)
         let data = await resp.json()

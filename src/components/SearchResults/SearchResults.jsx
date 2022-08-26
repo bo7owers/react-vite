@@ -26,11 +26,7 @@ const SearchResults = (props) => {
         <>
             <Ul>
                 {props.results.map((item) => (
-                    <Li key={item.episode_id}>
-                        <strong>{item.director}</strong> directed the item:{' '}
-                        {item.title}
-                        <em>{item.title}</em>
-                    </Li>
+                    <Li key={item.episode_id}>{item.title}</Li>
                 ))}
             </Ul>
         </>
