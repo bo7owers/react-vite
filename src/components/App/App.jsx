@@ -2,50 +2,20 @@ import './App.css'
 import Nav from '../Nav/Nav'
 import SearchBar from '../Searchbar/Searchbar'
 import SearchHistory from '../SearchHistory/SearchHistory'
-import SearchResults from '../SearchResults/SearchResults'
+// import SearchResults from '../SearchResults/SearchResults'
 import { useState, useEffect } from 'react'
 import { css } from '@emotion/react'
+import Main from '../ChoosingRoutes/Main'
 
 function App() {
     const [terms, setTerms] = useState([])
-    const [results, setResults] = useState([])
-    const [dataType, setDataType] = useState('films')
 
     const addTerm = (term) => {
         // Create array from sarting with user input
         let newTermsArr = new Set([term, ...terms])
         setTerms(Array.from(newTermsArr))
-        // fetchData(term)
     }
 
-    useEffect(() => {
-        fetchData(terms[0])
-        return () => {
-            // clean up func
-        }
-    }, [terms])
-
-    useEffect(
-        () => {
-            // do things
-            fetchData()
-        },
-        [
-            // watch things
-        ]
-    )
-
-    const fetchData = async (keyword) => {
-        let url = `https://swapi.dev/api/${dataType}`
-        if (keyword) {
-            url += `/?search=${keyword}`
-        }
-        let resp = await fetch(url)
-        if (!resp.ok) throw new Error(resp.statusText)
-        let data = await resp.json()
-
-        setResults(data.results)
-    }
     return (
         // pass props and funcs to components
         <div className='app'>
@@ -66,7 +36,7 @@ function App() {
                     Hello there
                 </h1>
                 <SearchHistory terms={terms} />
-                <SearchResults results={results} type={dataType} />
+                <Main />
             </main>
         </div>
     )

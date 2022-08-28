@@ -33,47 +33,32 @@ function Nav() {
                     list-style-type: none;
                 `}
             >
-                <ul
+                <Link
+                    to='/films'
                     css={css`
-                        display: flex;
-                        flex-flow: row wrap;
-                        justify-content: flex-end;
-                        align-items: center;
-                        gap: 1rem;
-                        list-style-type: none;
+                        color: #ffffff;
                     `}
                 >
-                    <li>
-                        <Link
-                            to='/films'
-                            css={css`
-                                color: #ffffff;
-                            `}
-                        >
-                            Films
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to='/people'
-                            css={css`
-                                color: #ffffff;
-                            `}
-                        >
-                            People
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to='/planets'
-                            css={css`
-                                color: #ffffff;
-                            `}
-                        >
-                            Planets
-                        </Link>
-                    </li>
-                </ul>
+                    Films
+                </Link>
+
+                <Link
+                    to='/people'
+                    css={css`
+                        color: #ffffff;
+                    `}
+                >
+                    People
+                </Link>
+
+                <Link
+                    to='/planets'
+                    css={css`
+                        color: #ffffff;
+                    `}
+                >
+                    Planets
+                </Link>
             </nav>
         </div>
     )
