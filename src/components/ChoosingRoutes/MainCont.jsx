@@ -11,7 +11,7 @@ export default function MainCont(props) {
                 <Route path='/films' element={<Films />} />
                 <Route path='/people' element={<People />} />
                 <Route path='/planets' element={<Planets />} />
-                <Route path='/' element={<Home />} />
+                <Route path='/' exact element={<Home />} />
             </Routes>
         </div>
     )
