@@ -1,7 +1,7 @@
 import './App.css'
 import Nav from '../Nav/Nav'
 import SearchBar from '../Searchbar/Searchbar'
-import SearcHistory from '../SearchHistory/SearchHistory'
+import SearchHistory from '../SearchHistory/SearchHistory'
 import SearchResults from '../SearchResults/SearchResults'
 import { useState, useEffect } from 'react'
 import { css } from '@emotion/react'
@@ -65,8 +65,8 @@ function App() {
                 >
                     Hello there
                 </h1>
-                <SearcHistory terms={terms} />
-                <SearchResults results={results} />
+                <SearchHistory terms={terms} />
+                <SearchResults results={results} type={dataType} />
             </main>
         </div>
     )
