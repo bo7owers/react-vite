@@ -24,11 +24,29 @@ const Li = styled.li`
     // }
 `
 const SearchResults = (props) => {
-    let {results} = {...props} 
+    let { results, type } = { ...props }
     // continue here min 20:00
+
+    let formattedData = results.map((item, index) => {
+        let obj = {
+            original: item,
+        }
+        switch (type) {
+            case 'films':
+                obj.ref = item.episode_id
+                obj.title = item.title
+                obj.txt = item.release_date
+                break
+            case 'people':
+                break
+            case 'planets':
+                break
+        }
+        return obj
+    })
     return (
         <div className='results'>
-            <List data={} />
+            <List data={formattedData} />
         </div>
     )
 }
