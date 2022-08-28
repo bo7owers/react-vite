@@ -4,7 +4,7 @@ import Films from '../Films/Films'
 import People from '../People/People'
 import Planets from '../Planets/Planets'
 
-export default function Main(props) {
+export default function MainCont(props) {
     return (
         <div className='mainContent'>
             <Routes>

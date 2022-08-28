@@ -5,7 +5,7 @@ import SearchHistory from '../SearchHistory/SearchHistory'
 // import SearchResults from '../SearchResults/SearchResults'
 import { useState, useEffect } from 'react'
 import { css } from '@emotion/react'
-import Main from '../ChoosingRoutes/Main'
+import MainCont from '../ChoosingRoutes/MainCont'
 
 function App() {
     const [terms, setTerms] = useState([])
@@ -36,7 +36,7 @@ function App() {
                     Hello there
                 </h1>
                 <SearchHistory terms={terms} />
-                <Main />
+                <MainCont />
             </main>
         </div>
     )
