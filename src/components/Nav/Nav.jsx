@@ -23,6 +23,21 @@ function Nav() {
                 }
             `}
         >
+            <Link
+                to='/'
+                css={css`
+                    margin-right: auto;
+                `}
+                title='Home'
+            >
+                <img
+                    src='./vite.svg'
+                    alt=''
+                    css={css`
+                        margin-right: auto;
+                    `}
+                />
+            </Link>
             <nav
                 css={css`
                     display: flex;
