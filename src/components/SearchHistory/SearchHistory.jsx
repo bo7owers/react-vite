@@ -1,5 +1,6 @@
 // import './search-history.css'
 import styled from '@emotion/styled'
+import List from '../List/List'
 
 const UlBgColour = '#ffefbf'
 const LiFirstColour = '#5c0202'
@@ -20,12 +21,18 @@ const Li = styled.li`
 `
 
 export default function SearcHistory(props) {
-    return (
-        // terms come from MainCont
-        <Ul className='search-list'>
-            {props.terms.map((term) => (
-                <Li key={term}>{term}</Li>
-            ))}
-        </Ul>
-    )
+    const { terms } = { ...props }
+    let formattedData = terms.map((item, index) => {
+        return {
+            ref: index,
+            title: item,
+            txt: null,
+        }
+    })
+    return <List data={formattedData} />
 }
+// <Ul className='search-list'>
+// {props.terms.map((term) => (
+//     <Li key={term}>{term}</Li>
+// ))}
+// </Ul>
