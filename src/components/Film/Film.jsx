@@ -14,14 +14,13 @@ export default function Film({ findFilm }) {
 
     let details = (
         <>
-            <p>{film && film.title}</p>
-            <p>{film && film.release_date}</p>
-            <p>{film && film.opening_crawl}</p>
+            <p>{film && `The movie was released on ${film.release_date}`}</p>
+            <p>{film && `${film.opening_crawl}`}</p>
         </>
     )
     return (
         <>
-            <h2>Selected film</h2>
+            <h2>{film && film.title}</h2>
             {film && details}
             <p>{!film && 'nothing'}</p>
         </>
