@@ -1,4 +1,4 @@
-import { Route, NavLink, Routes } from 'react-router-dom'
+import { Route, NavLink, Routes, Navigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Film from '../Film/Film'
 import { css } from '@emotion/react'
@@ -54,9 +54,9 @@ export default function Films(props) {
                 ))}
             </div>
             <div className='details' aria-live='polite'>
-                <Routes>
+                <Routes path='/films/'>
                     <Route
-                        path='/films/id'
+                        path=':id'
                         element={<Film findFilm={findFilm} />}
                     ></Route>
                 </Routes>
