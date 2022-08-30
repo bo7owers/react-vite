@@ -31,7 +31,7 @@ function Nav() {
                 title='Home'
             >
                 <img
-                    src='./vite.svg'
+                    src='../vite.svg'
                     alt=''
                     css={css`
                         margin-right: auto;
