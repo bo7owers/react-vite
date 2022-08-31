@@ -7,11 +7,13 @@ export default function Person({ list }) {
 
     return (
         <>
-            {person && <h2>{person.name}</h2>}
             {person && (
-                <p>
-                    {person.name} was born in {person.birth_year}
-                </p>
+                <>
+                    <h2>{person.name}</h2>
+                    <p>
+                        {person.name} was born in {person.birth_year}
+                    </p>
+                </>
             )}
         </>
     )
