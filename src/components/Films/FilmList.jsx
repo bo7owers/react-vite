@@ -1,4 +1,4 @@
-import { Route, NavLink, Routes, Navigate } from 'react-router-dom'
+import { Route, NavLink, Routes } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Film from '../Film/Film'
 import { css } from '@emotion/react'
