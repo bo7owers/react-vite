@@ -19,6 +19,8 @@ export default function MainCont(props) {
             }
         })()
     }, [pathname])
+
+    // TODO: add 404 page
     return (
         <div className='mainContent'>
             <Routes>
