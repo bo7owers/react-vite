@@ -21,6 +21,7 @@ function App() {
         <div className='app'>
             <Nav />
             <SearchBar userInput={terms[0]} addTerm={addTerm} />
+            <SearchHistory terms={terms} />
             <main
                 css={css`
                     display: flex;
@@ -35,7 +36,6 @@ function App() {
                 >
                     Hello there
                 </h1>
-                <SearchHistory terms={terms} />
                 <MainCont />
             </main>
         </div>
